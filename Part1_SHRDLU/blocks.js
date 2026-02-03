@@ -151,7 +151,7 @@ class BlocksWorld {
         this.ctx.stroke();
     }
 
-    lightenColor(color, percent) {
+    lightenColor(color) {
         // 简单的颜色变亮函数
         const colors = {
             'red': '#ff6b6b',
@@ -162,7 +162,7 @@ class BlocksWorld {
         return colors[color] || color;
     }
 
-    darkenColor(color, percent) {
+    darkenColor(color) {
         // 简单的颜色变暗函数
         const colors = {
             'red': '#cc0000',

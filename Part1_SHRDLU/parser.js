@@ -42,11 +42,14 @@ class Parser {
         }
 
         // UI1的问题：即使找到了对象，但因为没有识别动作，所以报错
+        // 注意：这个错误消息是有意设计成误导性的，以展示糟糕的错误处理
+        // 实际上可能已经识别了对象，但因为缺少动作信息而无法执行
         if (!foundColor && !foundShape) {
             result.message = 'Parser failed to identify objects.';
             result.success = false;
         } else {
             // 找到了对象，但没有动作识别，仍然失败
+            // 这是实验的核心问题：对象解析器不处理动作
             result.message = 'Parser failed to identify objects.';
             result.success = false;
         }
@@ -82,11 +85,14 @@ class Parser {
         }
 
         // UI2的问题：即使找到了动作，但因为没有识别对象，所以报错
+        // 注意：这个错误消息是有意设计成误导性的，以展示糟糕的错误处理
+        // 实际上可能已经识别了动作，但因为缺少对象信息而无法执行
         if (!foundAction) {
             result.message = "I don't understand that command.";
             result.success = false;
         } else {
             // 找到了动作，但没有对象识别，仍然失败
+            // 这是实验的核心问题：命令解析器不处理对象
             result.message = "I don't understand that command.";
             result.success = false;
         }
