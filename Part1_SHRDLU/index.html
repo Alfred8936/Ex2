@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHRDLU 积木世界 - Part1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>SHRDLU 积木世界实验 - Part1</h1>
+        
+        <div class="info-box">
+            <h3>实验目的说明</h3>
+            <p>本实验展示了自然语言理解系统中的解析器设计。SHRDLU是一个经典的自然语言理解系统，用于理解关于积木世界的指令。</p>
+            <p><strong>两个UI界面的区别：</strong></p>
+            <ul>
+                <li><strong>UI界面1（对象解析器）：</strong>专注于识别命令中的对象（如颜色、形状）</li>
+                <li><strong>UI界面2（命令解析器）：</strong>专注于识别命令的动作意图</li>
+            </ul>
+            <p><strong>修改前的问题：</strong>两个解析器相互独立，没有协同工作，导致无法正确处理完整的指令。</p>
+            <p><strong>修改后的改进：</strong>整合两个解析器，使它们协同工作，能够同时识别对象和动作。</p>
+        </div>
+
+        <div class="ui-selector">
+            <button id="ui1-btn" class="ui-btn active">UI界面1 - 对象解析器</button>
+            <button id="ui2-btn" class="ui-btn">UI界面2 - 命令解析器</button>
+            <button id="ui-fixed-btn" class="ui-btn">修复后的UI</button>
+        </div>
+
+        <div class="world-container">
+            <h2>积木世界</h2>
+            <canvas id="blocksCanvas" width="600" height="400"></canvas>
+        </div>
+
+        <div class="command-panel">
+            <h2 id="panel-title">命令输入</h2>
+            <div class="input-group">
+                <input type="text" id="commandInput" placeholder="输入命令，例如：拿起红色的方块">
+                <button id="submitBtn">执行</button>
+            </div>
+            <div id="feedback" class="feedback"></div>
+            
+            <div class="examples">
+                <h3>示例命令：</h3>
+                <ul>
+                    <li>拿起红色的方块</li>
+                    <li>移动蓝色的球</li>
+                    <li>放下绿色的立方体</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="log-container">
+            <h3>执行日志</h3>
+            <div id="logArea"></div>
+        </div>
+    </div>
+
+    <script src="blocks.js"></script>
+    <script src="parser.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
