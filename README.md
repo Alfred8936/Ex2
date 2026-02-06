@@ -1,5 +1,44 @@
-# Ex2
-# Zhang Xinyu
+# AI Document Summarizer
+
+A full-stack web application for uploading documents (PDF/TXT) and generating AI-powered summaries using Next.js, Supabase, and GitHub Models API.
+
+## 🚀 Quick Start
+
+See [SETUP.md](./SETUP.md) for detailed setup instructions.
+
+```bash
+npm install
+cp .env.example .env.local
+# Configure your .env.local file
+npm run dev
+```
+
+## 📋 Features
+
+- 🔐 Secure authentication with Supabase
+- 📁 PDF and TXT file upload (up to 10MB)
+- 🤖 AI-powered text summarization
+- 💾 Smart caching of text and summaries
+- 📜 Document history and management
+- ⚡ Serverless architecture on Vercel
+
+## 🏗️ Tech Stack
+
+- **Frontend**: Next.js 14, React 18, TypeScript, Tailwind CSS
+- **Backend**: Next.js API Routes (Serverless Functions)
+- **Database**: PostgreSQL via Supabase
+- **Storage**: Supabase Storage
+- **AI**: GitHub Models API (GPT-4o-mini)
+- **Deployment**: Vercel
+
+## 📚 Documentation
+
+- [Setup Guide](./SETUP.md) - Comprehensive setup and deployment instructions
+- [Database Schema](./supabase-schema.sql) - SQL schema for Supabase
+
+---
+
+# Zhang Xinyu - Developer Profile
 
 **Address**: Jotun Canton Road 558  
 **Phone**: (+86) 17308065057  
